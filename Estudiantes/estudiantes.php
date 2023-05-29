@@ -88,6 +88,7 @@ echo var_dump($all);
               </td>
               <td>
                 <a class="btn btn-danger" href="borrarEstudiante.php?id=<?= $val['id']?>&req=delete">Borrar</a>
+                <a class="btn btn-warning" href="actualizarEstudiante.php?id=<?= $val['id']?>">Editar</a>
               </td>
             </tr>
             <?php } ?>

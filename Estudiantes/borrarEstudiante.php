@@ -6,12 +6,10 @@ if (isset($_GET['id']) && isset($_GET['req'])){
 
         $record -> setId($_GET['id']);
         $record -> delete();
-        echo 3;
         echo "<script>
         alert('Dato Borrado');
         document.location='estudiantes.php';
         </script>";
-        echo"final";
     }
 };
 ?>
