@@ -49,6 +49,28 @@ class Config{
             return $e->getMessage();
         }
     }
-}
 
+    public function obtainAll(){
+        try {
+            $stm = $this-> dbCnx -> prepare("SELECT * FROM campers");
+            $stm -> execute();
+            return $stm->fetchAll();
+        } catch (Exeption $e) {
+            return $e->getMessage();
+        }
+    }
+    public function delete(){
+        try {
+            $stm = $this-> dbCnx -> prepare("DELETE  FROM campers WHERE id = ?");
+            $stm -> execute([$this->id]);
+            return $stm->fetchAll();
+            echo "<script>
+            alert('registroEliminado');
+            document.location='estudiantes.php'</script>
+            ";
+        } catch (Exeption $e) {
+            return $e->getMessage();
+        }
+    }
+}
 ?>

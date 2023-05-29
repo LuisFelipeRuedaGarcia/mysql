@@ -1,3 +1,9 @@
+<?php
+require_once("config.php");
+$data = new Config();
+$all = $data -> obtainAll();
+echo var_dump($all);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -56,15 +62,35 @@
               <th scope="col">NOMBREs</th>
               <th scope="col">DIRECCION</th>
               <th scope="col">LOGROS</th>
-              <th scope="col">DETALLE</th>
+              <th scope="col">Eliminar</th>
+
             </tr>
+
           </thead>
           <tbody class="" id="tabla">
 
             <!-- ///////Llenado DInamico desde la Base de Datos -->
-         
-       
-
+            <?php
+            foreach($all as $key => $val){
+            ?>
+            <tr>
+              <td>
+                <?php echo $val['id']?>
+              </td>
+              <td>
+                <?php echo $val['NOMBRES']?>
+              </td>
+              <td>
+                <?php echo $val['direccion']?>
+              </td>
+              <td>
+                <?php echo $val['logros']?>
+              </td>
+              <td>
+                <a class="btn btn-danger" href="borrarEstudiante.php?id=<?= $val['id']?>&req=delete">Borrar</a>
+              </td>
+            </tr>
+            <?php } ?>
           </tbody>
         
         </table>
