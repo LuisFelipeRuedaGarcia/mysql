@@ -2,6 +2,7 @@
 
 require_once("../Config/db.php");
 require_once("../Config/Conectar.php");
+require_once("../loginUser.php");
 
 class RegistroUser extends Conectar{
 private $email;
@@ -12,6 +13,7 @@ private $id;
 
 public function __construct($id=0, $email="", $username="", $password="", $idCamper="",  $dbCnx="",){
     $this->id = $id;
+    $this->idCamper = $idCamper;
     $this->email = $email;
     $this->username = $username;
     $this->password = $password;
@@ -63,11 +65,31 @@ public function insertData(){
         $stm = $this->dbCnx->prepare("INSERT INTO users (idCamper, email, username, PASSWORD) VALUES (?,?,?,?)");
         echo $this->idCamper. $this->email. $this->username. $this->password;
         $stm->execute([$this->idCamper, $this->email, $this->username, md5($this->password)]);
-        echo "then";
-    } catch (Exeption $e) {
-        echo "d";
+        
+        $login = new LoginUser();
+        $login ->setEmail($_POST['email']);
+        $login ->setPassword($_POST['password']);
+        $succes = $login->login();
+
+
+    } catch (Exception $e) {
+
         return $e->getMessage();
     }
 }
 
+public function checkUser($email){
+    try {
+        $stm = $this->dbCnx->prepare("SELECT * FROM users WHERE email = '$email'");
+        $stm->execute();
+        if($stm->fetchColumn()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+}
 }

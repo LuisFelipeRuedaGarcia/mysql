@@ -56,7 +56,7 @@ class Estudiante extends Conectar{
             $stm = $this-> dbCnx -> prepare("SELECT * FROM campers");
             $stm -> execute();
             return $stm->fetchAll();
-        } catch (Exeption $e) {
+        } catch (Exception $e) {
             return $e->getMessage();
         }
     }
@@ -65,7 +65,7 @@ class Estudiante extends Conectar{
             $stm = $this-> dbCnx -> prepare("DELETE  FROM campers WHERE id = ?");
             $stm -> execute([$this->id]);
             return $stm->fetchAll();
-        } catch (Exeption $e) {
+        } catch (Exception $e) {
             return $e->getMessage();
         }
     }
@@ -74,7 +74,7 @@ class Estudiante extends Conectar{
             $stm = $this-> dbCnx -> prepare("SELECT * FROM campers WHERE id = ?");
             $stm -> execute([$this->id]);
             return $stm->fetchAll();
-        } catch (Exeption $e) {
+        } catch (Exception $e) {
             $e -> getMessage();
         }
     }
@@ -82,7 +82,7 @@ class Estudiante extends Conectar{
         try {
             $stm = $this-> dbCnx -> prepare("UPDATE campers SET NOMBRES = ?, direccion = ?, logros = ? WHERE id = ?");
             $stm->execute([$this->nombres, $this->direccion, $this->logros, $this->id]);
-        } catch (Exeption $e) {
+        } catch (Exception $e) {
             $e -> getMessage();
         }
     }
