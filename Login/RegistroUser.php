@@ -2,7 +2,7 @@
 
 require_once("../Config/db.php");
 require_once("../Config/Conectar.php");
-require_once("../loginUser.php");
+require_once("loginUser.php");
 
 class RegistroUser extends Conectar{
 private $email;

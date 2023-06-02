@@ -4,7 +4,7 @@ if (isset($_POST["registrarse"])){
 
     $register = new RegistroUser();
 
-    $register->setIdCamper(2);
+    $register->setIdCamper(1);
     $register->setEmail($_POST["email"]);
     $register->setUsername($_POST["username"]);
     $register->setPassword($_POST["password"]);
