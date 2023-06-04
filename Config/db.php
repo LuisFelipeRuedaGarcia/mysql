@@ -1,5 +1,4 @@
 <?php
-
 if (!defined("DB_TYPE")){
     define("DB_TYPE", "mysql");
 }

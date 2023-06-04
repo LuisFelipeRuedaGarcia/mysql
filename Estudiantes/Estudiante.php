@@ -1,15 +1,12 @@
 <?php
-
 require_once("../Config/db.php");
 require_once("../Config/Conectar.php");
 class Estudiante extends Conectar{
-
     private $id;
     private $nombres;
     private $direccion;
     private $logros;
 /*     protected $dbCnx; */
-
     public function __construct($id = 0, $nombres = null, $direccion = null, $logros = null, $dbCnx=""){
         $this->id = $id;
         $this->nombres = $nombres;

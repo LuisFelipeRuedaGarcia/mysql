@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 if(isset($_POST['loguearse'])){
     require_once("loginUser.php");
     $credenciales = new LoginUser();
@@ -16,4 +14,5 @@ if(isset($_POST['loguearse'])){
         document.location='loginRegister.php';</script>";
     };
 }
+
 ?>

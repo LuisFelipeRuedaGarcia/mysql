@@ -1,4 +1,5 @@
 <?php
+
 require_once("../Config/db.php");
 require_once("../Config/Conectar.php");
 
@@ -67,4 +68,5 @@ public function login(){
         return $e->getMessage();
     }
 }
+
 }

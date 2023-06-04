@@ -2,14 +2,12 @@
 require_once("../Config/db.php");
 require_once("../Config/Conectar.php");
 require_once("loginUser.php");
-
 class RegistroUser extends Conectar{
 private $email;
 private $username;
 private $password;
 private $idCamper;
 private $id;
-
 public function __construct($id=0, $email="", $username="", $password="", $idCamper="",  $dbCnx="",){
     $this->id = $id;
     $this->idCamper = $idCamper;
@@ -18,7 +16,6 @@ public function __construct($id=0, $email="", $username="", $password="", $idCam
     $this->password = $password;
     parent::__construct($dbCnx);
 }
-
 public function setId($id){
     $this->id= $id;
 }
@@ -56,8 +53,7 @@ public function setPassword($password){
 }
 public function getPassword(){
     return $this->password;
-}
- 
+} 
 public function insertData(){
     try {
 
@@ -69,7 +65,6 @@ public function insertData(){
         $login ->setEmail($_POST['email']);
         $login ->setPassword($_POST['password']);
         $succes = $login->login();
-
 
     } catch (Exception $e) {
 
@@ -91,5 +86,4 @@ public function checkUser($email){
         return $e->getMessage();
     }
 }
-
 }

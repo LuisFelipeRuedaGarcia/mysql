@@ -1,5 +1,4 @@
 <?php
-
 require_once("Estudiante.php");
 $data = new Estudiante();
 $id = $_GET['id'];
@@ -11,8 +10,6 @@ print_r($record);
 $val = $record[0];
 echo "<br> val <br>";
 print_r($val);
-
-//
 
 if (isset($_POST['editar'])){
     $data->setNombres($_POST['nombres']);

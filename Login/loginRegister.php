@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +14,7 @@
     <!-- css -->
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
     <div class="container-m">
         <div class="section1">

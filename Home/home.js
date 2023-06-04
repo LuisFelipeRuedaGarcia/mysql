@@ -1,9 +1,6 @@
 
 // inicar charts 
-
 const getOptionCharts1 = () => {
-
-
     return  {
       tooltip: {
         trigger: 'item',
