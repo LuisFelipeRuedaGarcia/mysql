@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_POST["registrarse"])){
     require_once("RegistroUser.php");
 
@@ -21,5 +22,6 @@ if (isset($_POST["registrarse"])){
         echo "<script> alert('usuario registrado');
     document.location='../Home/home.php';</script>";
     }
+    
 }
 ?>

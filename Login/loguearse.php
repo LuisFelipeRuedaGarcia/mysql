@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 if(isset($_POST['loguearse'])){
     require_once("loginUser.php");
     $credenciales = new LoginUser();

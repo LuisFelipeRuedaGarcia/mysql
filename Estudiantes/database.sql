@@ -1,5 +1,4 @@
 CREATE DATABASE campus;
-
 Use campus;
 
 CREATE TABLE campers(

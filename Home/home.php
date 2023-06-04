@@ -1,8 +1,8 @@
-<!DOCTYPE html>
 <?php
 require_once("../Login/loginUser.php");
 session_start();
 ?>
+<!DOCTYPE html>
 <html>
 
 <head>

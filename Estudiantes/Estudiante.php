@@ -1,4 +1,5 @@
 <?php
+
 require_once("../Config/db.php");
 require_once("../Config/Conectar.php");
 class Estudiante extends Conectar{

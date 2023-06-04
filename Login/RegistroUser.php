@@ -1,5 +1,4 @@
 <?php
-
 require_once("../Config/db.php");
 require_once("../Config/Conectar.php");
 require_once("loginUser.php");
@@ -92,4 +91,5 @@ public function checkUser($email){
         return $e->getMessage();
     }
 }
+
 }

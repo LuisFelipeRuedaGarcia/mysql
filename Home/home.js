@@ -1,7 +1,6 @@
 
 // inicar charts 
 
-
 const getOptionCharts1 = () => {
 
 
